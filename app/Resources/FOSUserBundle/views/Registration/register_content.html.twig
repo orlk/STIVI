@@ -1,0 +1,81 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+
+<style type="text/css">/* Credit to bootsnipp.com for the css for the color graph */
+    .colorgraph {
+        height: 5px;
+        border-top: 0;
+        background: #c4e17f;
+        border-radius: 5px;
+        background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+        background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+        background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+        background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    }</style>
+
+<div class="container" style=" margin-top: 4%;">
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3"style=" margin-bottom: 2%;background-color: lavender;">
+            <form  style=" margin-bottom: 11%;"role="form" action="{{ path('fos_user_registration_register') }}"  method="POST" class="fos_user_registration_register">
+                <h2 style="font-size: 30PX;margin-left: 10%;color: rgb(51, 122, 183);" > Please Sign Up <small  style="font-size: 18px;margin-left: 9px;">It's free and always will be.</small></h2>
+                <hr class="colorgraph">
+
+
+
+
+                <div class="form-group">
+                    {# Génération de l'input. #}{% set usernameplaceholder = 'registration.email'|trans %}
+                    {{ form_widget(form.email, {'attr': { 'class': 'form-control input-lg','id':"inputEmail",'placeholder': usernameplaceholder ,'tabindex':"4"}}) }}
+                    {# Affichage des erreurs pour ce champ précis. #}
+                    {{ form_errors(form.email) }}
+                </div>
+
+
+                <div class="form-group">
+
+                    {# Génération de l'input. #}
+                    {% set usernameplaceholder = 'form.username'|trans %}
+                    {{ form_widget(form.username, {'attr': {'class': 'form-control input-lg','id':"display_name",'placeholder':usernameplaceholder,'tabindex':"4"}}) }}
+                    {# Affichage des erreurs pour ce champ précis. #}
+
+                    <span class="help-inline">    {{ form_errors(form.username) }}   </span>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+
+                        <div class="form-group">
+                            {% set usernameplaceholder = 'form.password'|trans %}
+                            {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control input-lg','placeholder':usernameplaceholder,'tabindex':"6"}}) }}
+                            {{ form_errors(form.plainPassword.first) }}
+                        </div>
+
+
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            {% set usernameplaceholder = 'form.password_confirmation'|trans %}
+                            {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control input-lg','placeholder':usernameplaceholder,'tabindex':"6"}}) }}
+                            {{ form_errors(form.plainPassword.second) }}
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <hr class="colorgraph">
+
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">  <input type="submit" value="{{ 'registration.submit'|trans }}" class="btn btn-primary btn-block btn-lg" tabindex="7"/>  {{ form_rest(form) }}  </div>
+                     </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>

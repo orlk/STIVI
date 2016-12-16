@@ -1,0 +1,813 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <link href="{{asset('css/stylish-portfolio.css')}}" rel="stylesheet" type="text/css" />
+ <link href="{{asset('css/team.css')}}" rel="stylesheet" type="text/css" />
+
+    <style type="text/css" xmlns="http://www.w3.org/1999/html">
+
+        /*------------------------------------------------------------*/
+
+        /*------------------------------------------------------------*/
+        /* BOOTSTRAP 3.x GLOBAL STYLES
+    -------------------------------------------------- */
+        body {
+            padding-bottom: 40px;
+
+        }
+
+
+
+
+
+
+
+        /* CUSTOMIZE THE CAROUSEL
+        -------------------------------------------------- */
+
+        /* Carousel base class */
+        .carousel {
+            margin-bottom: 60px;
+        }
+        /* Since positioning the image, we need to help out the caption */
+        .carousel-caption {
+            z-index: 1;
+        }
+
+        /* Declare heights because of positioning of img element */
+        .carousel .item {
+            height: 400px;
+            background-color:#555;
+        }
+        .carousel img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 400px;
+        }
+
+
+
+        /* MARKETING CONTENT
+        -------------------------------------------------- */
+
+        /* Pad the edges of the mobile views a bit */
+        .marketing {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        /* Center align the text within the three columns below the carousel */
+        .marketing .col-lg-4 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .marketing h2 {
+            font-weight: normal;
+        }
+        .marketing .col-lg-4 p {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+
+        /* Featurettes
+        ------------------------- */
+
+        .featurette-divider {
+            margin: 80px 0; /* Space out the Bootstrap <hr> more */
+        }
+        .featurette {
+            padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+            overflow: hidden; /* Vertically center images part 2: clear their floats. */
+        }
+        .featurette-image {
+            margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+        }
+
+        /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+        .featurette-image.pull-left {
+            margin-right: 40px;
+        }
+        .featurette-image.pull-right {
+            margin-left: 40px;
+        }
+
+        /* Thin out the marketing headings */
+        .featurette-heading {
+            font-size: 50px;
+            font-weight: 300;
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+        p{font-size: 15px;
+          font-weight: bold;
+            color: black;
+        }
+
+        /* RESPONSIVE CSS
+        -------------------------------------------------- */
+
+        @media (min-width: 768px) {
+
+            /* Remve the edge padding needed for mobile */
+            .marketing {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+
+
+            /* Bump up size of carousel content */
+            .carousel-caption p {
+                margin-bottom: 20px;
+                font-size: 21px;
+                line-height: 1.4;
+            }
+
+        }
+
+    </style>
+
+
+
+
+
+
+
+    <!-- Carousel
+    ================================================== -->
+    <section id="top" class="top ">
+        <div id="myCarousel" class="carousel slide">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="{{asset('images/construction_work.jpg')}}"  style="width:100%" class="img-responsive">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Bootstrap 3 Carousel Layout</h1>
+                            <p></p>
+                            <p><a class="btn btn-lg btn-primary" href="http://getbootstrap.com">Learn More</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="http://lorempixel.com/2000/600/abstract/1" class="img-responsive">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Changes to the Grid</h1>
+                            <p>Bootstrap 3 still features a 12-column grid, but many of the CSS class names have completely changed.</p>
+                            <p><a class="btn btn-large btn-primary" href="#">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="http://placehold.it/1500X500" class="img-responsive">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Percentage-based sizing</h1>
+                            <p>With "mobile-first" there is now only one percentage-based grid.</p>
+                            <p><a class="btn btn-large btn-primary" href="#">Browse gallery</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+
+
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="icon-prev"></span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="icon-next"></span>
+            </a>
+        </div></section>
+    <!-- /.carousel -->
+    <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle" style="margin-top: 6%"><i class="glyphicon glyphicon-bookmark"></i></a>
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="glyphicon glyphicon-remove"></i></a>
+            <li class="sidebar-brand">
+                <a href="#">STIVI industrie</a>
+            </li>
+            <li>
+                <a href="#top">Home</a>
+            </li>
+            <li>
+                <a href="#services">services</a>
+            </li>
+            <li>
+                <a href="#portfolio">Direction</a>
+            </li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+        <!-- Three columns of text below the carousel -->
+        <section id="about" class="about">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <img class="img-circle" src="{{asset('images/about_us.jpg')}}">
+                    <h2>Qui sommes nous ?</h2>
+                    <p align="center"> Créée en 2005, à partir d’une entreprise familiale (fondée en 1975 par M. Slaheddine CHOUCHENE),
+                        STIVI industrie - Société Tunisienne d’Isolation et Ventilation Industrielle -
+                        est parmi les premières sociétés à s’investir dans le domaine de la climatisation et de la ventilation en Tunisie.</p>
+                    <p align="center"><a  class="btn btn-default" data-toggle="modal" data-target="#aboutus" href="#">View details »</a></p>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <img class="img-circle" src="{{asset('images/satisfaction.png   ')}}">
+                    <h2>Notre engagement </h2>
+                    <p style="text-align: center;">La qualité, la santé, la sécurité au travail sont au cœur de notre stratégie
+
+                        d’entreprise. Elles constituent une véritable méthode de management qui structure
+
+                        au quotidien nos efforts d’amélioration continu.</p>
+                    <p><a class="btn btn-default" href="#">View details »</a></p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img class="img-circle" src="{{asset('images/premium-quality-guaranteed.png')}}">
+                    <h2 style="text-align: center">Notre Politique Qualité</h2>
+
+                    <p>Chez STIVI industrie la qualité de la produiction est l'exigence qui nous mène a la recherche de la perfection  </p>
+                    <p align="center"><a  class="btn btn-default" data-toggle="modal" data-target="#qualiti" href="#">View details »</a></p>
+                </div>
+
+            </div><!-- /.row -->
+        </section>
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+        <section id="services" class="services ">
+            <div class="row" >
+                <div class="col-md-12 text-center">
+
+                    <div id="services"  class="container-fluid text-center">
+                        <img class="img-circle" src="{{asset('images/icon-large-solutions.png')}}">
+                        <h2>SERVICES</h2>
+                        <h4>Ce que nous offrons</h4>
+                        <br>
+                        <div class="row slideanim">
+                            <div class="col-sm-4">
+                                <img class="img-circle" src="{{asset('images/maintenance.png')}}">
+                                <h4>Reparation </h4>
+                                <p align="center">Retappage et mise en état des anciens équipements tels que </p>
+                            </div>
+                            <div class="col-sm-4">
+                                <img class="img-circle" src="{{asset('images/soutraitances2.png')}}">
+                                <h4>Soustraitance</h4>
+                                <p align="center">Sous traitance des travaux de Tôlerie.</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <img class="img-circle" src="{{asset('images/design1.png')}}">
+                                <h4>Etude & Conception</h4>
+                                <p align="center">L'étude et la conception des plans des gaines de ventilation</p>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="row slideanim"l >
+                            <div class="col-sm-4">
+                                <img class="img-circle" src="{{asset('images/isolation.png')}}">
+                                <h4> Isolation</h4>
+                                <p align="center">Calorifugeage, isolation thermique (Industrielle),et frigorifique, pour toutes installations professionnelles.</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <img class="img-circle" src="{{asset('images/whole_house.jpg')}}">
+                                <h4>Ventilation</h4>
+                                <p>Installation de gaines de ventilation</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <img class="img-circle" src="{{asset('images/autres.png')}}">
+                                <h4>Autres</h4>
+                                <p>plus d'autres service a vous de decouvrire avec nous </p>
+                            </div>
+                        </div>
+                    </div>
+                </div></div></section>
+
+
+
+        <hr class="featurette-divider">
+        <section id="portfolio" class="portfolio ">
+            <div class="featurette">
+                <img class="featurette-image img-circle pull-left" src="{{asset('images/directeur.jpg')}}">
+
+                <h2 style="text-align: center" class="featurette-heading">TARAK CHOUCHENE <span class="text-muted">Directeur Général</span></h2>
+                <p class="lead" style="text-align: center ;font-size: 15px;font-weight: bold">
+                    Je m’engage de ma part en tant que Gérant de la STIVI Industries à être le plus
+
+                    attentif possible au respect de notre politique qualité, santé et sécurité au travail par
+
+                    la garantie de toutes les ressources nécessaires à cet effet
+                </p>
+                <p align="center"><a  class="btn btn-default" data-toggle="modal" data-target="#myModal" href="#">View details »</a></p>
+
+
+            </div></section>
+
+        <hr class="featurette-divider">
+
+        <div class="featurette"  style="margin-top: -15%">
+            <section class="team" style="text-align: center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="col-lg-12">
+                                <h2>NOTRE ÉQUIPE</h2>
+                                <h6 class="description"></h6>
+                                <div class="row pt-md">
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile"style="text-align: center">
+                                        <div class="img-box">
+                                            <img src="http://placemi.com/petnp/600x700" class="img-responsive">
+                                            <ul class="text-center">
+                                                <a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                                                <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                                                <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
+                                            </ul>
+                                        </div>
+                                        <h1>CHOUCHENE Randa </h1>
+                                        <h2>R.commercial</h2>
+                                        <p>texte a ecrire</p>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile"style="text-align: center">
+                                        <div class="img-box">
+                                            <img src="http://placemi.com/xruzn/600x700" class="img-responsive">
+                                            <ul class="text-center">
+                                                <a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                                                <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                                                <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
+                                            </ul>
+                                        </div>
+                                        <h1>ABIDI Rami</h1>
+                                        <h2>R.Financier</h2>
+                                        <p>Texte ecrire</p>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile"style="text-align: center">
+                                        <div class="img-box">
+                                            <img src="http://placemi.com/wctme/600x700" class="img-responsive">
+                                            <ul class="text-center">
+                                                <a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                                                <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                                                <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
+                                            </ul>
+                                        </div>
+                                        <h1 align="center">HAJ SALEM Athar</h1>
+                                        <h2 align="center">R.H</h2>
+                                        <p>texte a ecrire</p>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile"style="text-align: center">
+                                        <div class="img-box">
+                                            <img src="http://placemi.com/rxco7/600x700" class="img-responsive">
+                                            <ul class="text-center">
+                                                <a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                                                <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                                                <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
+                                            </ul>
+                                        </div>
+                                        <h1>ALAOUA Ahmed</h1>
+                                        <h2>R.M.Q</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+         </div>
+
+        <hr class="featurette-divider">
+
+        <div class="featurette">
+
+            <h2 class="featurette-heading" align="center" style="margin-top: -10%">Nos Références <span class="text-muted"></span></h2>
+                 </div>
+
+     <div>
+         <link href="{{asset('css/minicaroucel.css')}}" rel="stylesheet" type="text/css" />
+         <script src="{{ asset('js/script.js') }}"></script>
+         <script src="{{ asset('js/wowslider.js') }}"></script>
+         <script src="{{ asset('js/mninicarou.js') }}"></script>
+         <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+         <div id="wowslider-container1" align="center">
+             <div class="ws_images"><ul>
+
+                     <li><img src="{{asset('images/images/steg3.jpg')}}" alt="steg3" title="steg3" id="wows1_0"/></li>
+                     <li><img src="{{asset('images/images/tlchargement.jpg')}}"alt="téléchargement" title="téléchargement" id="wows1_1"/></li>
+                     <li><img src="{{asset('images/images/tunisair.jpg')}}"alt="tunisair" title="tunisair" id="wows1_2"/></li>
+                     <li><img src="{{asset('images/images/entreprisesaiph1.jpg')}}"alt="entrepriseSAIPH[1]" title="entrepriseSAIPH[1]" id="wows1_3"/></li>
+                     <li><img src="{{asset('images/images/lad_pharma_algerie.jpg')}}" alt="lad pharma algerie" title="lad pharma algerie" id="wows1_4"/></li>
+                     <li><img src="{{asset('images/images/logo_cytopharma.png')}}" alt="logo cytopharma" title="logo cytopharma" id="wows1_5"/></li>
+                     <li><img src="{{asset('images/images/logosanofiaventis1.jpg')}}" alt="logosanofiaventis[1]" title="logosanofiaventis[1]" id="wows1_6"/></li>
+                     <li><img src="{{asset('images/images/pfizer.jpg')}}" title="pfizer" id="wows1_7"/></li>
+                     <li><img src="{{asset('images/images/siphat.jpg')}}" alt="siphat" title="siphat" id="wows1_8"/></li>
+                     <li><img src="{{asset('images/images/sofap.jpg')}}" alt="sofap" title="sofap" id="wows1_9"/></li>
+                     <li><img src="{{asset('images/images/unimed.jpg')}}" alt="unimed" title="unimed" id="wows1_10"/></li>
+                     <li><img src="{{asset('images/images/csm_medpharma_logo_w._slogan_01_ad5613bc9c.jpg')}}" alt="csm_Medpharma_Logo_w._slogan_01_ad5613bc9c" title="csm_Medpharma_Logo_w._slogan_01_ad5613bc9c" id="wows1_11"/></li>
+                     <li><img src="{{asset('images/images/diamed.jpg')}}" alt="diamed" title="diamed" id="wows1_12"/></li>
+                     <li><img src="{{asset('images/images/schneiderelectric.jpg')}}" alt="schneider-electric" title="schneider-electric" id="wows1_13"/></li>
+                     <li><img src="{{asset('images/images/steliaaerospace.jpg')}}"alt="STELIA-Aerospace" title="STELIA-Aerospace" id="wows1_14"/></li>
+                     <li><img src="{{asset('images/images/tlchargement_1.png')}}" alt="téléchargement (1)" title="téléchargement (1)" id="wows1_15"/></li>
+                     <li><img src="{{asset('images/images/tlchargement_0.png')}}" alt="téléchargement" title="téléchargement" id="wows1_16"/></li>
+                     <li><img src="{{asset('images/images/zodiacaerospace.jpg')}}" alt="zodiac-aerospace" title="zodiac-aerospace" id="wows1_17"/></li>
+                     <li><img src="{{asset('images/images/aerolia.png')}}" alt="aerolia" title="aerolia" id="wows1_18"/></li>
+                     <li><img src="{{asset('images/images/one_tech.jpg')}}" alt="one tech" title="one tech" id="wows1_19"/></li>
+                     <li><img src="{{asset('images/images/images.jpg')}}" alt="images" title="images" id="wows1_20"/></li>
+                     <li><img src="{{asset('images/images/royal_nozha.jpg')}}" alt="royal nozha" title="royal nozha" id="wows1_21"/></li>
+                     <li><img src="{{asset('images/images/soussepalace1008162.jpg')}}" alt="sousse-palace-100816-2" title="sousse-palace-100816-2" id="wows1_22"/></li>
+                     <li><img src="{{asset('images/images/tlchargement_2.png')}}" alt="téléchargement" title="téléchargement" id="wows1_23"/></li>
+                     <li><img src="{{asset('images/images/andaluciabeach.png')}}" alt="andaluciabeach" title="andaluciabeach" id="wows1_24"/></li>
+                     <li><img src="{{asset('images/images/green_palm_jerba.jpg')}}" alt="green palm jerba" title="green palm jerba" id="wows1_25"/></li>
+                     <li><img src="{{asset('images/images/alstom.jpg')}}" alt="alstom" title="alstom" id="wows1_26"/></li>
+                     <li><img src="{{asset('images/images/logoaximaseitha300x93.jpg')}}" alt="LOGO-AXIMA-SEITHA-300x93" title="LOGO-AXIMA-SEITHA-300x93" id="wows1_27"/></li>
+                     <li><img src="{{asset('images/images/tlchargement_3.png')}}" alt="téléchargement" title="téléchargement" id="wows1_28"/></li>
+                     <li><img src="{{asset('images/images/tent.png')}}" alt="tent" title="tent" id="wows1_29"/></li>
+                     <li><img src="{{asset('images/images/attassiatv9.jpg')}}" alt="attassiatv-9" title="attassiatv-9" id="wows1_30"/></li>
+                     <li><img src="{{asset('images/images/chainetounesna.jpg')}}" alt="chaine-tounesna" title="chaine-tounesna" id="wows1_31"/></li>
+                     <li><img src="{{asset('images/images/logo.png')}}" alt="logo" title="logo" id="wows1_32"/></li>
+                     <li><img src="{{asset('images/images/240x240cwk.png')}}" alt="240x240-cwk" title="240x240-cwk" id="wows1_33"/></li>
+                     <li><img src="{{asset('images/images/delice.jpg')}}" alt="delice" title="delice" id="wows1_34"/></li>
+                     <li><img src="{{asset('images/images/natilaitprofile.jpg')}}" alt="natilait-profile" title="natilait-profile" id="wows1_35"/></li>
+                     <li><img src="{{asset('images/images/aromatechfr.png')}}" alt="aromatech-fr" title="aromatech-fr" id="wows1_37"/></li>
+                 </ul></div>
+             <div class="ws_thumbs">
+                 <div>
+                     <a href="#" title="steg3"><img src="{{asset('images/tooltips/steg3.jpg')}}" alt="" /></a>
+                     <a href="#" title="téléchargement"><img src="{{asset('images/tooltips/tlchargement.jpg')}}" alt="" /></a>
+                     <a href="#" title="tunisair"><img src="{{asset('images/tooltips/tunisair.jpg')}}" alt="" /></a>
+                     <a href="#" title="entrepriseSAIPH[1]"><img src="{{asset('images/tooltips/entreprisesaiph1.jpg')}}" alt="" /></a>
+                     <a href="#" title="lad pharma algerie"><img src="{{asset('images/tooltips/lad_pharma_algerie.jpg')}}" alt="" /></a>
+                     <a href="#" title="logo cytopharma"><img src="{{asset('images/tooltips/logo_cytopharma.png')}}" alt="" /></a>
+                     <a href="#" title="logosanofiaventis[1]"><img src="{{asset('images/tooltips/logosanofiaventis1.jpg')}}" alt="" /></a>
+                     <a href="#" title="pfizer"><img src="{{asset('images/tooltips/pfizer.jpg')}}" alt="" /></a>
+                     <a href="#" title="siphat"><img src="{{asset('images/tooltips/siphat.jpg')}}" alt="" /></a>
+                     <a href="#" title="sofap"><img src="{{asset('images/tooltips/sofap.jpg')}}" alt="" /></a>
+                     <a href="#" title="unimed"><img src="{{asset('images/tooltips/unimed.jpg')}}" alt="" /></a>
+                     <a href="#" title="csm_Medpharma_Logo_w._slogan_01_ad5613bc9c"><img src="{{asset('images/tooltips/csm_Medpharma_Logo_w._slogan_01_ad5613bc9c.jpg')}}" alt="" /></a>
+                     <a href="#" title="diamed"><img src="{{asset('images/tooltips/diamed.jpg')}}" alt="" /></a>
+                     <a href="#" title="schneider-electric"><img src="{{asset('images/tooltips/schneiderelectric.jpg')}}" alt="" /></a>
+                     <a href="#" title="STELIA-Aerospace"><img src="{{asset('images/tooltips/steliaaerospace.jpg')}}" alt="" /></a>
+                     <a href="#" title="téléchargement (1)"><img src="{{asset('images/tooltips/tlchargement_1.png')}}" alt="" /></a>
+                     <a href="#" title="téléchargement"><img src="{{asset('images/tooltips/tlchargement_0.png')}}" alt="" /></a>
+                     <a href="#" title="zodiac-aerospace"><img src="{{asset('images/tooltips/zodiacaerospace.jpg')}}" alt="" /></a>
+                     <a href="#" title="aerolia"><img src="{{asset('images/tooltips/aerolia.png')}}" alt="" /></a>
+                     <a href="#" title="one tech"><img src="{{asset('images/tooltips/one_tech.jpg')}}" alt="" /></a>
+                     <a href="#" title="images"><img src="{{asset('images/tooltips/images.jpg')}}" alt="" /></a>
+                     <a href="#" title="royal nozha"><img src="{{asset('images/tooltips/royal_nozha.jpg')}}" alt="" /></a>
+                     <a href="#" title="sousse-palace-100816-2"><img src="{{asset('images/tooltips/soussepalace1008162.jpg')}}" alt="" /></a>
+                     <a href="#" title="téléchargement"><img src="{{asset('images/tooltips/tlchargement_2.png')}}" alt="" /></a>
+                     <a href="#" title="andaluciabeach"><img src="{{asset('images/tooltips/andaluciabeach.png')}}" alt="" /></a>
+                     <a href="#" title="green palm jerba"><img src="{{asset('images/tooltips/green_palm_jerba.jpg')}}" alt="" /></a>
+                     <a href="#" title="alstom"><img src="{{asset('images/tooltips/alstom.jpg')}}" alt="" /></a>
+                     <a href="#" title="LOGO-AXIMA-SEITHA-300x93"><img src="{{asset('images/tooltips/logoaximaseitha300x93.jpg')}}" alt="" /></a>
+                     <a href="#" title="téléchargement"><img src="{{asset('images/tooltips/tlchargement_3.png')}}" alt="" /></a>
+                     <a href="#" title="tent"><img src="{{asset('images/tooltips/tent.png')}}" alt="" /></a>
+                     <a href="#" title="attassiatv-9"><img src="{{asset('images/tooltips/attassiatv9.jpg')}}" alt="" /></a>
+                     <a href="#" title="chaine-tounesna"><img src="{{asset('images/tooltips/chainetounesna.jpg')}}" alt="" /></a>
+                     <a href="#" title="logo"><img src="{{asset('images/tooltips/logo.png')}}" alt="" /></a>
+                     <a href="#" title="240x240-cwk"><img src="{{asset('images/tooltips/240x240cwk.png')}}" alt="" /></a>
+                     <a href="#" title="delice"><img src="{{asset('images/tooltips/delice.jpg')}}" alt="" /></a>
+                     <a href="#" title="natilait-profile"><img src="{{asset('images/tooltips/natilaitprofile.jpg')}}" alt="" /></a>
+
+                     <a href="#" title="aromatech-fr"><img src="{{asset('images/tooltips/aromatechfr.png')}}" alt="" /></a>
+                 </div>
+             </div>
+
+             <div class="ws_shadow"></div>
+         </div>
+
+
+         <!-- End WOWSlider.com BODY section -->
+
+     </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+        <!--  begin popup  manger !-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 style="text-align: center" class="modal-title" id="myModalLabel">Engagement de la Direction</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>&nbsp;&nbsp;&nbsp;La qualité, la santé, la sécurité au travail sont au cœur de notre stratégie
+
+                            d’entreprise. Elles constituent une véritable méthode de management qui structure
+
+                            au quotidien nos efforts d’amélioration continu.</p></br>
+
+                        <p> &nbsp;&nbsp;&nbsp;Nous adoptons la norme ISO 9001 comme référentiels pour bâtir un système intégré
+
+                            de management de la qualité, santé et sécurité au travail. Tour le personnel est
+
+                            impliqué dans l’application de ce système pour satisfaire les exigences des clients
+
+                            ainsi que les exigences réglementaires en vigueur relatives aux produits, à la santé,
+
+                            et sécurité au travail.</p></br>
+
+                        <p>
+                            &nbsp;&nbsp;&nbsp;Ce système est revu et entretenu régulièrement lors des réunions de revue de
+
+                            direction et/ou de comité de pilotage.</p></br>
+
+                        <p>
+                            &nbsp;&nbsp;&nbsp;Nous confions la responsabilité d’évaluation de la performance, de surveillance et de
+
+                            l’application de ce système au responsable de management qualité qui a tous les
+
+                            pouvoirs pour intervenir chaque fois que le système de management n’est pas
+
+                            respecté</p></br>
+
+                        <p>
+                            &nbsp;&nbsp;&nbsp;Je m’engage de ma part en tant que Gérant de la STIVI Industries à être le plus
+
+                            attentif possible au respect de notre politique qualité, santé et sécurité au travail par
+
+                            la garantie de toutes les ressources nécessaires à cet effet
+                        </p></br>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; On demande enfin que tous à la STIVI Industries, portent leur concours en faisant
+
+                            preuve de créativité, de dévouement et de responsabilité.
+                        </p></br>
+                        <P> Date de création 17/10/2016</P>
+
+                        <p> La Direction Générale</p>
+                        <p> TAREK CHOUCHENE</p>
+
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- end popup!-->
+
+
+
+        <!--  begin popup  aboutus !-->
+        <div class="modal fade" id="aboutus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 style="text-align: center" class="modal-title" id="myModalLabel">Qui sommes nous ?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p align="center">&nbsp;&nbsp;&nbsp;Crée en 2005, à partir d’une entreprise familiale (fondée en 1975 par M. Slaheddine CHOUCHENE), STIVI Industrie - Société Tunisienne d’Isolation et Ventilation Industrielle -*
+                            est parmi les premières sociétés à s’investir dans le
+                            domaine de la climatisation et de la ventilation en Tunisie.</p></br>
+
+                        <p align="center"> &nbsp;&nbsp;&nbsp;Aujourd’hui M. Tarek CHOUCHENE, Manager de STIVI industrie,
+                            persévère dans la voie tracée par Mr Slaheddine et fixe de nouvelles
+                            orientations stratégiques destinées à pérenniser l’entreprise par la recherche de l’excellence
+                            dans le travail réalisé et le produit proposé.
+                            La situation de STIVI indusqtrie, à Bizerte à 60km de la capitale, favorise l’accès à ses usines et facilite le déplacement de ses cadres et techniciens sur tout le territoire tunisien et à l’étranger.
+
+                        </p></br>
+
+                        <p align="center">&nbsp;&nbsp;&nbsp;STIVI industrie dispose d’un capital humain qualifié,
+                            pour offrir à sa clientèle un produit répondant aux critères internationaux de conception et de qualité.
+                            Elle compte parmi les plus grands spécialistes de la ventilation
+                            pour tous types de locaux industriels ou d'habitations.
+                            Grâce à l’acquisition de nouvelles technologies,
+                            STIVI industrie peut fournir des produits et des services fiables et compétitifs à ses clients.
+
+                        </p></br>
+
+                        <p align="center">
+                            &nbsp;&nbsp;&nbsp;STIVI industrie crée l’événement en décembre 2008,
+                            en étant la première société dans son domaine en Tunisie certifiée Iso 9001:2008.</p></br>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- end popup aboutus !-->
+
+        <!--  begin popup  Qualite   !-->
+        <div class="modal fade" id="qualiti" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 style="text-align: center" class="modal-title" id="myModalLabel">Notre Politique Qualité</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p align="center" >
+                            Pour faire face à ces défis, notre politique qualité sera axée sur les volets suivants :</p>
+
+
+                        <p style="text-align: center">
+                            1) &nbsp;&nbsp;&nbsp; Veiller à l’écoute des clients et de toutes les autres parties intéressées par la
+
+                            satisfaction de leurs besoins et attentes.</p>
+
+                        <p style="text-align: center">
+                            &nbsp;&nbsp;&nbsp;         2) &nbsp;&nbsp;&nbsp; Opter pour la qualité et l’amélioration continue de nos produits et nos
+
+                            méthodes de travail tout en respectant les exigences réglementaire et
+
+                            contractuelles, afin d’améliorer le système de management qualité.</p>
+
+                        <p style="text-align: center">
+                            &nbsp;&nbsp;&nbsp;         3) &nbsp;&nbsp;&nbsp;Croire que le développement et la formation de chacun sont les clés de succès. </p>
+
+                        <p style="text-align: center">        4) &nbsp;&nbsp;&nbsp; Viser l’excellence en encourageront l’initiative du personnel.</p>
+
+                        <p style="text-align: center">   &nbsp;&nbsp;&nbsp;         5) &nbsp;&nbsp;&nbsp;
+                            Prévoir et assurer les conditions de santé, sécurité au travail et de bien être de
+                            tout le personnel et les autres parties intéressées.</p>
+
+                        <p style="text-align: center">
+                            &nbsp;       6) &nbsp;&nbsp;&nbsp;
+                            Essayer d’être un modèle d’efficacité, avec une utilisation rationnelle des
+
+                            ressources humaines et techniques.</p>
+
+
+
+                        </p></br>
+
+                        <p align="center"> &nbsp;&nbsp;&nbsp;Aujourd’hui M. Tarek CHOUCHENE, Manager de STIVI industrie,
+                            persévère dans la voie tracée par Mr Slaheddine et fixe de nouvelles
+                            orientations stratégiques destinées à pérenniser l’entreprise par la recherche de l’excellence
+                            dans le travail réalisé et le produit proposé.
+                            La situation de STIVI industrie, à Bizerte à 60km de la capitale, favorise l’accès à ses usines et facilite le déplacement de ses cadres et techniciens sur tout le territoire tunisien et à l’étranger.
+
+                        </p></br>
+
+                        <p align="center">&nbsp;&nbsp;&nbsp;STIVI industrie dispose d’un capital humain qualifié,
+                            pour offrir à sa clientèle un produit répondant aux critères internationaux de conception et de qualité.
+                            Elle compte parmi les plus grands spécialistes de la ventilation
+                            pour tous types de locaux industriels ou d'habitations.
+                            Grâce à l’acquisition de nouvelles technologies,
+                            STIVI industrie peut fournir des produits et des services fiables et compétitifs à ses clients.
+
+                        </p></br>
+
+                        <p align="center">
+                            &nbsp;&nbsp;&nbsp;STIVI industrie crée l’événement en décembre 2008,
+                            en étant la première société dans son domaine en Tunisie certifiée Iso 9001:2008.</p></br>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- end popup Note qualiter  !-->
+
+        <!-- Navigation -->
+
+
+        <p class="pull-right"><a href="#top"><img  src="{{asset('images/back to top1.png')}}" ></a></p>
+        <!-- FOOTER -->
+
+        <footer>
+            <section id="contact" class="contact "></section>
+            <section id="contact" class="contact "></section>
+
+        </footer>
+
+    </div><!-- /.container -->
+
+    <!-- jQuery -->
+
+    <script src="{{ asset('js/jquery.js') }}"></script>
+
+
+    <!-- Bootstrap Core JavaScript -->
+
+    <script src="js/bootstrap.js"></script>
+
+
+    <script type="text/javascript">
+        function centerModal() {
+            $(this).css('display', 'block');
+            var $dialog = $(this).find(".modal-dialog");
+            var offset = ($(window).height() - $dialog.height()) / 2;
+            // Center modal vertically in window
+            $dialog.css("margin-top", offset);
+        }
+
+        $('.modal').on('show.bs.modal', centerModal);
+        $(window).on("resize", function () {
+            $('.modal:visible').each(centerModal);
+        });
+
+
+
+
+        function aboutus(){
+            $this.css('display','block');
+            var $aboutus=$(this).find(".modal-dialog");
+            var offset=($(window).height()-$aboutus.height())/2;
+            $aboutus.css("margin-top",offset);
+        }
+        $('.modal').on('show.bs.modal',aboutus);
+        $(window).on("resize", function (){
+            $('.modale:visible').each(aboutus);
+        });
+
+
+        function qualiti(){
+            $this.css('display','block');
+            var $aboutus=$(this).find(".modal-dialog");
+            var offset=($(window).height()-$aboutus.height())/2;
+            $aboutus.css("margin-top",offset);
+        }
+        $('.modal').on('show.bs.modal',qualiti);
+        $(window).on("resize", function (){
+            $('.modale:visible').each(qualiti);
+        });
+
+
+
+
+        // Scrolls to the selected menu item on the page
+        $(function() {
+            $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+
+
+
+
+        $("#menu-close").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+    </script>
+
+
+
+{% endblock %}

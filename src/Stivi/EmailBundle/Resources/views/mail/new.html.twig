@@ -1,0 +1,161 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<style type="text/css">
+
+    .jumbotron {
+        background: #358CCE;
+        color: #FFF;
+        border-radius: 0px;
+    }
+    .jumbotron-sm { padding-top: 24px;
+        padding-bottom: 15px; }
+    .jumbotron small {
+        color: #FFF;
+    }
+    .h1 small {
+        font-size: 22px;
+    }
+    #map {
+        width: 100%;
+        height: 200px;
+        background-color: grey;
+    }
+</style>
+<!-- style end!-->
+
+
+<div class="container">
+
+
+    <div class="jumbotron jumbotron-sm">
+    <div class="container" style=" background: #358CCE;">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1>
+                    Contact <small style="font-size: 12px"></br>
+         Pour vous assurer que nous vous mettons en contact avec les bonnes personnes,
+         vous trouverez des informations de contact ci-dessous</small></h1>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="well well-sm">
+
+               <form action="{{ path('my_app_mail_sendeimal') }}" method="post" xmlns="http://www.w3.org/1999/html">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Nom</label>
+                                <div class="input-group">
+                                   <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span>
+                                </span>
+                            <input type="text"  name="name" class="form-control" id="name" placeholder="Entrer votre nom " required="required" />
+                       </div>
+                        </div>
+                          <div class="form-group">
+                            <label for="email">
+                                Téléphone</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span>
+                                </span>
+                                <input type="tel" name="Telephone" class="form-control" id="Telephone" placeholder="Entrer votre numéro de Téléphone "  /></div>
+                        </div>
+
+                         <div class="form-group">
+                            <label for="Activité">
+                                Activité</label>
+                            <input type="text" name="Activite" class="form-control" id="Activite" placeholder="Entrer votre Activité " required="required" />
+                        </div>
+                           <div class="form-group">
+                            <label for="Fonction">
+                                Fonction</label>
+                            <input type="text" name="Fonction" class="form-control" id="Fonction" placeholder="Entrer votre Fonction " required="required" />
+                        </div>
+                          <div class="form-group">
+                            <label for="Societe">
+                                Societe</label>
+                            <input type="text" class="form-control" name="Societe" id="Societe" placeholder="Entrer le nom de  votre Societe " required="required" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="email" name="Email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">
+                                Objet </label>
+                                <select id="subject" name="Subject" class="form-control" required="required">
+                                <option value="na" selected="">Choisissez-en un:</option>
+                                <option value="service">Service clientèle générale</option>
+                                <option value="suggestions">Suggestions</option>
+                                <option value="product">Demande de devis</option>
+                                <option value="product">Autres</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Message</label>
+                            <textarea name="Message" id="message" class="form-control"  rows="9" cols="25" required="required"
+                                placeholder="Message" style="margin: 0px -2.67188px 0px 0px; height: 479px; width: 97%;"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" name="send" class="btn btn-primary pull-right" id="btnContactUs">
+                            Send Message</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <form>
+            <legend><span class="glyphicon glyphicon-globe"></span> Our office</legend>
+            <address>
+                <strong>STIVI, Adresse.</strong><br>
+                Zone Industrielle Menzel-Jemil,Bizerte, Tunisie<br>
+
+               <a href="tel:(+216)72 53 34 44"><abbr title="Phone" href="tel:(+216)72 53 34 44">
+                    Tel:</abbr>
+               (+216)72 53 34 44</a>
+            </address>
+            <address>
+                <strong>STIVI Email: </strong><br>
+                <a href="mailto:contact-stivi@planet.tn">contact-stivi@planet.tn</a>
+            </address>
+
+                <h3>Google map location</h3>
+                <div id="map"></div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+    <script>
+
+        function initMap() {
+            var uluru = {lat: 37.219556, lng: 9.938556};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6Mem5K1Y-GEfkmjSOX3a10mBv8BNhFI&callback=initMap">
+    </script>
+  </body>
+</html>
+{% endblock %}

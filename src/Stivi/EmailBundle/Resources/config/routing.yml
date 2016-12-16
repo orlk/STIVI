@@ -1,0 +1,10 @@
+stivi_email_homepage:
+    path:     /
+    defaults: { _controller: StiviEmailBundle:Default:index }
+my_app_mail_sendeimal:
+    path: /sendmail
+    defaults: { _controller: StiviEmailBundle:Mail:sendMail }
+
+my_app_email_redirection:
+    path:     /redirection
+    defaults: { _controller: StiviEmailBundle:Mail:redirection }

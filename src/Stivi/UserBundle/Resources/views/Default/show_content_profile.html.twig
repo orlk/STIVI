@@ -1,0 +1,294 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends 'base.html.twig' %}
+{% block body %}
+    <!-- !-->
+
+<style type="text/css">
+    #particles {
+        width: 100%;
+        height: 120%;
+        overflow: hidden;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        z-index: -2;
+    }
+</style>
+    <!-- Bootstrap Core CSS -->
+
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- MetisMenu CSS -->
+
+    <link href="{{asset('css/metisMenu.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- Custom CSS -->
+
+    <link href="{{asset('css/sb-admin-2.css')}}" rel="stylesheet" type="text/css" />
+    <!-- Morris Charts CSS -->
+
+    <link href="{{asset('css/morris.css')}}" rel="stylesheet" type="text/css" />
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+    <div id="wrapper" style="margin-top: 5%">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">tableau de bord -- {{ user.username }}</a>
+            </div>
+
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+
+                        <li>
+                            <a href="{{ path('stivi_user_homepage') }}"><i class="fa fa-dashboard fa-fw"></i> Tableau de bord</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i>
+                                Profil de l'utilisateur</a>
+
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Profil de l'utilisateur</h1>
+                </div>
+
+
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{ user.username }}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+
+
+                                        <div class=" col-md-9 col-lg-9 ">
+                                            <table class="table table-user-information">
+                                                <tbody>
+                                                <tr>
+                                                    <td>Nom</td>
+                                                    <td>
+                                                        {% if    user.Nom  is null    %}
+                                                            vide
+                                                        {% else %}
+
+                                                            {{ user.Nom }}
+                                                        {% endif %}</td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Prenom</td>
+                                                    <td>
+                                                        {% if    user.Prenom  is null    %}
+                                                            vide
+                                                        {% else %}
+
+                                                            {{ user.Prenom }}
+                                                        {% endif %}</td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Company Name</td>
+                                                    <td>
+                                                        {% if    user.NomDeLaSociete  is null    %}
+                                                        vide
+                                                        {% else %}
+
+                                                        {{ user.NomDeLaSociete }}
+                                                    {% endif %}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Dernière connexion:</td>
+                                                    <td>{{ user.lastlogin|date('Y-m-d H:i:s')  }}</td>
+                                                </tr>
+
+
+
+                                                <tr>
+
+                                                <tr>
+                                                    <td>adresse de la société</td>
+                                                    <td>
+                                                        {% if    user.HomeAdress  is null    %}
+                                                            vide
+                                                        {% else %}
+
+                                                            {{ user.HomeAdress }}
+                                                        {% endif %}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email</td>
+                                                    <td>
+                                                        {% if    user.Email  is null    %}
+                                                            vide
+                                                        {% else %}
+
+                                                        <a href="mailto: {{ user.Email }}">  {{ user.Email }}</a>
+                                                        {% endif %}
+
+
+                                                       </td>
+                                                </tr>
+                                                <td>Numéro de téléphone</td>
+                                                <td>
+                                                    {% if    user.Phonenumber  is null    %}
+                                                        vide
+                                                    {% else %}
+
+                                                        <a href="tel: {{ user.Phonenumber }}">  {{ user.Phonenumber }}</a>
+                                                    {% endif %}
+                                                </td>
+
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" href="mailto: hichem.annabi@esprit.tn" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i>Contactez l'administrateur</a>
+                        <span class="pull-right">
+                            <a href={{ path('stivi_user_edite_profile') }} data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i>modifier le profil</a>
+
+                        </span>
+                                </div>
+
+                            </div>
+
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+
+            <svg  id="particles" version="1.1" width="320" height="320" viewBox="0 0 320 320" fill="none" stroke="#000" stroke-linecap="round"
+                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <path id="r1">
+                        <animate id="p1" attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s" repeatCount="indefinite"/>
+                        <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin"/>
+                    </path>
+                    <path id="r2">
+                        <animate attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s" repeatCount="indefinite" begin="p1.begin+1s"/>
+                        <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin+1s"/>
+                    </path>
+                    <path id="r3">
+                        <animate attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s" repeatCount="indefinite" begin="p1.begin+2s"/>
+                        <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin+2s"/>
+                    </path>
+                    <path id="r4">
+                        <animate id="p1" attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s" repeatCount="indefinite" begin="p1.begin+3s"/>
+                        <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin+3s"/>
+                    </path>
+                    <path id="r5">
+                        <animate attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s" repeatCount="indefinite" begin="p1.begin+4s"/>
+                        <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin+4s"/>
+                    </path>
+                    <path id="r6">
+                        <animate attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s" repeatCount="indefinite" begin="p1.begin+5s"/>
+                        <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin+5s"/>
+                    </path>
+                </defs>
+                <use xlink:href="#r1"/>
+                <use xlink:href="#r1" transform="rotate(60 160 160)"/>
+                <use xlink:href="#r1" transform="rotate(120 160 160)"/>
+                <use xlink:href="#r1" transform="rotate(180 160 160)"/>
+                <use xlink:href="#r1" transform="rotate(240 160 160)"/>
+                <use xlink:href="#r1" transform="rotate(300 160 160)"/>
+                <use xlink:href="#r2" transform="rotate(30 160 160)"/>
+                <use xlink:href="#r2" transform="rotate(90 160 160)"/>
+                <use xlink:href="#r2" transform="rotate(150 160 160)"/>
+                <use xlink:href="#r2" transform="rotate(210 160 160)"/>
+                <use xlink:href="#r2" transform="rotate(270 160 160)"/>
+                <use xlink:href="#r2" transform="rotate(330 160 160)"/>
+                <use xlink:href="#r3"/>
+                <use xlink:href="#r3" transform="rotate(60 160 160)"/>
+                <use xlink:href="#r3" transform="rotate(120 160 160)"/>
+                <use xlink:href="#r3" transform="rotate(180 160 160)"/>
+                <use xlink:href="#r3" transform="rotate(240 160 160)"/>
+                <use xlink:href="#r3" transform="rotate(300 160 160)"/>
+                <use xlink:href="#r4" transform="rotate(30 160 160)"/>
+                <use xlink:href="#r4" transform="rotate(90 160 160)"/>
+                <use xlink:href="#r4" transform="rotate(150 160 160)"/>
+                <use xlink:href="#r4" transform="rotate(210 160 160)"/>
+                <use xlink:href="#r4" transform="rotate(270 160 160)"/>
+                <use xlink:href="#r4" transform="rotate(330 160 160)"/>
+                <use xlink:href="#r5"/>
+                <use xlink:href="#r5" transform="rotate(60 160 160)"/>
+                <use xlink:href="#r5" transform="rotate(120 160 160)"/>
+                <use xlink:href="#r5" transform="rotate(180 160 160)"/>
+                <use xlink:href="#r5" transform="rotate(240 160 160)"/>
+                <use xlink:href="#r5" transform="rotate(300 160 160)"/>
+                <use xlink:href="#r6" transform="rotate(30 160 160)"/>
+                <use xlink:href="#r6" transform="rotate(90 160 160)"/>
+                <use xlink:href="#r6" transform="rotate(150 160 160)"/>
+                <use xlink:href="#r6" transform="rotate(210 160 160)"/>
+                <use xlink:href="#r6" transform="rotate(270 160 160)"/>
+                <use xlink:href="#r6" transform="rotate(330 160 160)"/>
+            </svg>
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="{{ asset('js/metisMenu.min.js') }}"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="../vendor/raphael/raphael.min.js"></script>
+    <script src="{{ asset('js/raphael.min.js') }}"></script>
+    <script src="../vendor/morrisjs/morris.min.js"></script>
+    <script src="{{ asset('js/morris.min.js') }}"></script>
+    <script src="../data/morris-data.js"></script>
+    <script src="{{ asset('js/morris-data.js') }}"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="{{ asset('js/sb-admin-2.js') }}"></script>
+
+
+
+
+
+    <!-- !-->
+{% endblock %}

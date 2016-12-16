@@ -1,0 +1,23 @@
+stivi_user:
+    resource: "@StiviUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+stivi_ecomerce:
+    resource: "@StiviEcomerceBundle/Resources/config/routing.yml"
+    prefix:   /
+
+stivi_email:
+    resource: "@StiviEmailBundle/Resources/config/routing.yml"
+    prefix:   /
+
+stivi_stivi:
+    resource: "@StiviStiviBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

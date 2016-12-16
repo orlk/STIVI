@@ -1,0 +1,7 @@
+stivi_ecomerce_Boutique:
+    path:     /E-Boutique
+    defaults: { _controller: StiviEcomerceBundle:Default:index }
+
+stivi_ecomerce_Boutique_menu_filtaration:
+    path:     /E-Boutique_filtration
+    defaults: { _controller: StiviEcomerceBundle:Default:menu }

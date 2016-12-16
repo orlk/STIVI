@@ -1,0 +1,13 @@
+stivi_stivi_homepage:
+    path:     /home
+    defaults: { _controller: StiviStiviBundle:Default:index }
+
+
+stivi_stivi_aboutus:
+    path:     /aboutus
+    defaults: { _controller: StiviStiviBundle:Default:aboutus }
+#stivi_stivi_contact:
+#    path:     /contact
+#    defaults: { _controller: StiviStiviBundle:Default:contact }
+
+

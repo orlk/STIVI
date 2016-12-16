@@ -1,0 +1,182 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href={{ path('stivi_stivi_homepage') }}>Acceuil</a></li>
+                <li><a href={{ path('stivi_ecomerce_Boutique') }}>E-Boutique</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav">
+
+
+                <li><a href={{ path('my_app_mail_sendeimal') }}>contacts</a></li>
+                <li><a href="{{ path('stivi_user_homepage') }}">Espace client</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li><p class="navbar-text">    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                       <a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></p></li>
+
+                {% else %}
+
+                <li><p class="navbar-text">Already have an account?</p></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b >{{ 'layout.login'|trans({}, 'FOSUserBundle') }} </b> <span class="caret"></span></a>
+                    <ul id="login-dp" class="dropdown-menu">
+                        <li>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    Login via
+                                    <div class="social-buttons">
+                                        <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                                        <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                                    </div>
+                                    or
+
+                                    <form class="form" role="form" method="post" action="{{ path("fos_user_security_check") }}"  accept-charset="UTF-8" id="login-nav">
+
+                                        <div class="form-group">
+                                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                            <label class="sr-only" for="exampleInputEmail2">{{ 'security.login.username'|trans }}</label>
+                                            <input type="text" class="form-control" id="username" name="_username" placeholder="{{ 'security.login.username'|trans }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="exampleInputPassword2">{{ 'security.login.password'|trans }}</label>
+                                            <input type="password" class="form-control" id="password" name="_password" placeholder="{{ 'security.login.password'|trans }}" required>
+                                            <div class="help-block text-right"><a href="{{  path("fos_user_resetting_request") }}">Forget the password ?</a></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"id="remember_me" name="_remember_me" value="on"> {{ 'security.login.remember_me'|trans }}
+                                            </label>
+                                        </div>
+
+
+                                    </form>
+
+                                </div>
+                                <div class="bottom text-center">
+                                    New here ? <a href="{{ path('fos_user_registration_register') }}"><b>Inscription</b></a>
+                                </div>
+                            </div>
+                        </li>
+                     </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <span class="glyphicon glyphicon-shopping-cart"></span> 7 - Items<span class="caret"></span></a>
+                    <ul class="dropdown-menu dropdown-cart" role="menu">
+                        <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="http://lorempixel.com/50/50/" alt="" />
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>23$</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right">x</button>
+                    </span>
+                </span>
+                        </li>
+                        <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="http://lorempixel.com/50/50/" alt="" />
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>23$</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right">x</button>
+                    </span>
+                </span>
+                        </li>
+                        <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="http://lorempixel.com/50/50/" alt="" />
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>23$</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right">x</button>
+                    </span>
+                </span>
+                        </li>
+                        <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="http://lorempixel.com/50/50/" alt="" />
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>23$</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right">x</button>
+                    </span>
+                </span>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a class="text-center" href="">View Cart</a></li>
+                    </ul>
+                </li>
+
+
+                    {% endif %}
+
+
+
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+{% if app.request.hasPreviousSession %}
+    {% for type, messages in app.session.flashbag.all() %}
+        {% for message in messages %}
+            <div class="flash-{{ type }}" style="margin-top: 10%;margin-left: 2%;">
+                <div class="alert alert-success">  {{ message }}</div>
+
+
+            </div>
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+
+<div >
+    {% block fos_user_content %} {% endblock fos_user_content %}
+
+</div>

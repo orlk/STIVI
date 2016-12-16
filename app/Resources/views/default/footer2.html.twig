@@ -1,0 +1,207 @@
+<footer id="footer" class="clearfix"style="margin-bottom: -5%;">
+    <div id="footer-widgets">
+
+        <div class="container" style="background-color: #033649 ">
+
+            <div id="footer-wrapper">
+
+                <div class="row">
+                    <div class="col-sm-6 col-md-2">
+                        <div id="meta-3" class="widget widgetFooter widget_meta">
+                            <h4 class="widgettitle">Importent Page :</h4>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-home fa-fw"></i> Home</a></li>
+                                <li><a href="privacypolicy.php"><i class="fa fa-link"></i>   Privacy Policy</a></li>
+                                <li><a href="#"><i class="fa fa-envelope fa-fw"></i> Contact Us</a></li>
+                            </ul>
+                        </div>      </div> <!-- end widget1 -->
+
+                    <div class="col-sm-6 col-md-2">
+                        <div id="recent-posts-3" class="widget widgetFooter widget_recent_entries">
+                            <h4 class="widgettitle">Our social media :</h4>
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/mr.dauod" target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.twitter.com/ayatquranCom" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.youtube.com/user/sonsofye" target="_blank"><i class="fa fa-youtube"></i> Youtube</a>
+                                </li>
+                            </ul>
+                        </div>            </div> <!-- end widget1 -->
+
+                    <div class="col-sm-6 col-md-4">
+                        <div id="meta-4" class="widget widgetFooter widget_meta">
+                            <h4 class="widgettitle">Subscribe :</h4>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">E-mail :</span>
+                                    <input class="form-control" placeholder="Write your email .." type="text">
+                                     <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button">Subscribe !</button>
+                  </span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-sm-4 col-md-4"  style="margin-left: 16%">
+
+
+                                        <script language="javascript" type="text/javascript">
+                                            var day_of_week = new Array('Dim','Lun','Mar','Mer','Jeu','Ven','Sam');
+                                            var month_of_year = new Array('Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre');
+
+                                            //  DECLARE AND INITIALIZE VARIABLES
+                                            var Calendar = new Date();
+
+                                            var year = Calendar.getFullYear();     // Returns year
+                                            var month = Calendar.getMonth();    // Returns month (0-11)
+                                            var today = Calendar.getDate();    // Returns day (1-31)
+                                            var weekday = Calendar.getDay();    // Returns day (1-31)
+
+                                            var DAYS_OF_WEEK = 7;    // "constant" for number of days in a week
+                                            var DAYS_OF_MONTH = 31;    // "constant" for number of days in a month
+                                            var cal;    // Used for printing
+
+                                            Calendar.setDate(1);    // Start the calendar day at '1'
+                                            Calendar.setMonth(month);    // Start the calendar month at now
+
+
+                                            /* VARIABLES FOR FORMATTING
+                                             NOTE: You can format the 'BORDER', 'BGCOLOR', 'CELLPADDING', 'BORDERCOLOR'
+                                             tags to customize your caledanr's look. */
+
+                                            var TR_start = '<TR>';
+                                            var TR_end = '</TR>';
+                                            var highlight_start = '<TD WIDTH="60"><TABLE CELLSPACING=4 BORDER=1 BGCOLOR=DEDEFF BORDERCOLOR=CCCCCC><TR><TD WIDTH=30><B><CENTER>';
+                                            var highlight_end   = '</CENTER></TD></TR></TABLE></B>';
+                                            var TD_start = '<TD WIDTH="100"><CENTER>';
+                                            var TD_end = '</CENTER></TD>';
+
+                                            /* BEGIN CODE FOR CALENDAR
+                                             NOTE: You can format the 'BORDER', 'BGCOLOR', 'CELLPADDING', 'BORDERCOLOR'
+                                             tags to customize your calendar's look.*/
+
+                                            cal =  '<TABLE BORDER=1 CELLSPACING=2 CELLPADDING=2 BORDERCOLOR=BBBBBB><TR><TD>';
+                                            cal += '<TABLE BORDER=1 CELLSPACING=2 CELLPADDING=2 BORDERCOLOR=DEDEFF>' + TR_start;
+                                            cal += '<TD COLSPAN="' + DAYS_OF_WEEK + '" BGCOLOR="#EFEFEF"><CENTER><B>';
+                                            cal += month_of_year[month]  + '   ' + year + '</B>' + TD_end + TR_end;
+                                            cal += TR_start;
+
+                                            //   DO NOT EDIT BELOW THIS POINT  //
+
+                                            // LOOPS FOR EACH DAY OF WEEK
+                                            for(index=0; index < DAYS_OF_WEEK; index++)
+                                            {
+
+// BOLD TODAY'S DAY OF WEEK
+                                                if(weekday == index)
+                                                    cal += TD_start + '<B>' + day_of_week[index] + '</B>' + TD_end;
+
+// PRINTS DAY
+                                                else
+                                                    cal += TD_start + day_of_week[index] + TD_end;
+                                            }
+
+                                            cal += TD_end + TR_end;
+                                            cal += TR_start;
+
+                                            // FILL IN BLANK GAPS UNTIL TODAY'S DAY
+                                            for(index=0; index < Calendar.getDay(); index++)
+                                                cal += TD_start + '  ' + TD_end;
+
+                                            // LOOPS FOR EACH DAY IN CALENDAR
+                                            for(index=0; index < DAYS_OF_MONTH; index++)
+                                            {
+                                                if( Calendar.getDate() > index )
+                                                {
+                                                    // RETURNS THE NEXT DAY TO PRINT
+                                                    week_day =Calendar.getDay();
+
+                                                    // START NEW ROW FOR FIRST DAY OF WEEK
+                                                    if(week_day == 0)
+                                                        cal += TR_start;
+
+                                                    if(week_day != DAYS_OF_WEEK)
+                                                    {
+
+                                                        // SET VARIABLE INSIDE LOOP FOR INCREMENTING PURPOSES
+                                                        var day  = Calendar.getDate();
+
+                                                        // HIGHLIGHT TODAY'S DATE
+                                                        if( today==Calendar.getDate() )
+                                                            cal += highlight_start + day + highlight_end + TD_end;
+
+                                                        // PRINTS DAY
+                                                        else
+                                                            cal += TD_start + day + TD_end;
+                                                    }
+
+                                                    // END ROW FOR LAST DAY OF WEEK
+                                                    if(week_day == DAYS_OF_WEEK)
+                                                        cal += TR_end;
+                                                }
+
+                                                // INCREMENTS UNTIL END OF THE MONTH
+                                                Calendar.setDate(Calendar.getDate()+1);
+
+                                            }// end for loop
+
+                                            cal += '</TD></TR></TABLE></TABLE>';
+
+                                            //  PRINT CALENDAR
+                                            document.write(cal);
+
+                                            //  End -->
+                                        </script>
+
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div> <!-- end widget1 -->
+
+                    <div class="col-sm-6 col-md-4">
+                        <div id="search-3" class="widget widgetFooter widget_search"><h4 class="widgettitle">CONTACT</h4>
+
+                            <ul>
+                                <li><i class="fa fa-map-pin"></i> Adresse: <a href="https://www.google.fr/maps/place/37%C2%B013'10.4%22N+9%C2%B056'18.8%22E/@37.219546,9.9363633,633m/data=!3m2!1e3!4b1!4m5!3m4!1s0x0:0x0!8m2!3d37.219546!4d9.938552"> Zone Industrielle Menzel-Jemil,Bizerte, Tunisie</a> </li>
+                                <li > <i class="fa fa-phone"></i>Telephone (TUNISIA) :<a href="tel:(+216)72 53 34 44">  (+216)72 53 34 44</a> </li>
+                                <li> <i class="fa fa-fax"></i> FAX (TUNISIA) :<a href="tel:(+216)72 53 34 44">(+216)72 53 34 44</a> </li>
+                                <li><i class="fa fa-envelope"></i> E-mail :<a href="mailto:contact-stivi@planet.tn" target="_top">contact-stivi@planet.tn</a> </li>
+
+
+
+                                        </ul>
+
+                                    </div>
+                                </div> <!-- end widget1 -->
+
+
+                            </div> <!-- end .row -->
+                          </div>  <!-- end #footer-wrapper -->
+
+                    </div> <!-- end .container -->
+                </div> <!-- end #footer-widgets -->
+
+    <div id="sub-floor">
+        <div class="container" style="background-color: #031634 ">
+            <div class="row">
+                <div class="col-md-4 copyright">
+                    Copy right for STIVI industrie © 2016. All right reserved.
+                </div>
+                <div class="col-md-4 col-md-offset-4 attribution">
+                    Developed by <a href="https://www.linkedin.com/in/hichem-annabi-b900287b?trk=nav_responsive_tab_profile_pic">Hichem Annabi</a> .
+                </div>
+            </div> <!-- end .row -->
+        </div>
+    </div>
+
+</footer>

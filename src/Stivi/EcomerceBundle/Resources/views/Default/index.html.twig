@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<link href="{{asset('css/E-boutique.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" />
+
+
+<!-- side nave bar !-->
+<div class="container-fluid" style="margin-bottom: 5%;margin-top: 5%; background-color: transparent">
+        <div class="row content">
+            <div class="col-sm-3 sidenav" >
+                <h4>S.T.I.V.I. E-boutique</h4>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="#section1">Conduit de Ventilation Circulaire</a></li>
+                    <li><a href="#section2">Accessoires Aérauliques</a></li>
+                    <li><a href="#section3"> Acoustique</a></li>
+                    <li><a href="{{ path('stivi_ecomerce_Boutique_menu_filtaration') }}" id="filtration" name="filtration">Filtration</a></li>
+                    <li><a href="#section4">Conduit de Ventilation rectangulaire</a></li>
+                    <li><a href="#section4">Accessoires de supportage</a></li>
+                    <li><a href="#section4">Trappe de visite</a></li>
+                    <li><a href="#section4">Diffusion</a></li>
+                </ul><br>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Recherche produit..">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">
+                  <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
+                </div>
+            </div>
+
+
+
+            <!-- Side nav bar !-->
+
+
+
+             <div class="col-sm-9"style="background-color: white;">
+
+    <header>
+     <div class="well well-sm" style="margin-top: 2%">
+     <strong>type d'affichage</strong>
+      <div class="btn-group">
+			<span class="list-style-buttons">
+				<a href="#" id="gridview" class="switcher btn btn-default btn-sm"><span class="glyphicon glyphicon-th"></span>Grid</a>
+				<a href="#" id="listview" class="switcher active btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list"></span>List</a>
+			</span></div></div>
+        <h1>Nos produits</h1>
+
+    </header>
+
+{% for rep in rep %}
+
+
+    <ul id="products" class="list clearfix">
+        <!-- row 1 -->
+        <li class="clearfix">
+            <section class="left">
+                <img src="{{asset('images/'~rep.img)}}" alt="default thumb" class="thumb" style="width: 50%;height: 50%"></br>
+                <h3>{{ rep.titre }}</h3>
+                <span class="meta">Product REF: {{ rep.ref }}</span>
+            </section>
+
+            <section class="right">
+
+					<span class="darkview">
+					 <span class="price">$45.00</span>
+					<a href="javascript:void(0);"class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span> Ajouter au panier</a>
+					<a href="javascript:void(0);" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-info-sign"></span> Detail...</a>
+						</span>
+            </section>
+        </li>
+
+
+
+
+    </ul>
+{% endfor %}
+    <footer>
+        &nbsp;
+    </footer>
+
+</div></div></div>
+
+{% endblock %}

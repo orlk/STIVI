@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Hichem Annabi">
+    <meta name="keywords" content="ventilation, insolation, industrial,filtration, tunisia, air duct, aerodynamics, accessories, acoustic,sealing, assembly" />
+
+    <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <meta name="description" content="Industrial ventilation and insulation of Tunisia - Air duct -  Aerodynamics Accessories - Filtration - Acoustic Tunisia - sealing and assembly" />
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    {% block title %}{% endblock %}
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('./Images/Iconette_STIVI.ico') }}" />
+    <link href="{{asset('css/add.css')}}" rel="stylesheet" type="text/css" />
+
+</head>
+
+<style type="text/css">
+
+    body{
+
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+
+    }
+
+    #login-dp{
+        min-width: 250px;
+        padding: 14px 14px 0;
+        overflow:hidden;
+        background-color:rgba(255,255,255,.8);
+    }
+    #login-dp .help-block{
+        font-size:12px
+    }
+    #login-dp .bottom{
+        background-color:rgba(255,255,255,.8);
+        border-top:1px solid #ddd;
+        clear:both;
+        padding:14px;
+    }
+    #login-dp .social-buttons{
+        margin:12px 0
+    }
+    #login-dp .social-buttons a{
+        width: 49%;
+    }
+    #login-dp .form-group {
+        margin-bottom: 10px;
+    }
+    .btn-fb{
+        color: #fff;
+        background-color:#3b5998;
+    }
+    .btn-fb:hover{
+        color: #fff;
+        background-color:#496ebc
+    }
+    .btn-tw{
+        color: #fff;
+        background-color:#55acee;
+    }
+    .btn-tw:hover{
+        color: #fff;
+        background-color:#59b5fa;
+    }
+    @media(max-width:768px){
+        #login-dp{
+            background-color: inherit;
+            color: #fff;
+        }
+        #login-dp .bottom{
+            background-color: inherit;
+            border-top:0 none;
+        }
+    }
+
+</style>
+<body>
+
+{% block nav %}{% include '::default/navbar.html.twig '%}{% endblock %}
+
+
+{% block body %} {% endblock %}
+{% block aside %}  {% include '::default/aside_social_media.html.twig '%}{% endblock %}
+
+
+
+
+
+{% block foot %}{% include '::default/footer2.html.twig '%}{% endblock %}
+
+{% block javascripts %}{% endblock %}
+
+
+
+
+
+<script type='text/javascript'>
+    var msg = "[STIVI-VENTILATION]:: Tunisian company of industrial insulation and ventilation - ventilation duct - aerolic Accessories- Filtration";
+    msg = " ..... " + msg;pos = 0;
+    function scrollTitle() {
+        document.title = msg.substring(pos, msg.length) + msg.substring(0, pos); pos++;
+        if (pos > msg.length) pos = 0
+        window.setTimeout("scrollTitle()",300);
+    }
+    scrollTitle();
+
+
+</script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+<script src="{{ asset('js/E-boutique.js') }}"></script>
+
+<script src="{{ asset('js/carou.js') }}"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+stivi_user_homepage:
+    path:     /profile
+    defaults: { _controller: StiviUserBundle:Default:index }
+stivi_user_profile_utilisateur_profile:
+    path:     /profile_utilisateur_profile
+    defaults: { _controller: StiviUserBundle:Default:profile }
+stivi_user_edite_profile:
+    path:     /profile_utilisateur_edit
+    defaults: { _controller: StiviUserBundle:Default:Editprofile }
